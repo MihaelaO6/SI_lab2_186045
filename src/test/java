@@ -1,0 +1,28 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class SILab2Test {
+
+    private SILab2 tester = new SILab2();
+    String username=null,password=null;
+
+
+    @Test  void MultipleConditionTest()
+    {
+        User user = new User("obMi@c",null,"");
+        assertEquals(false,tester.function(user,null));
+        user = new User(null,"mob1","mobadik@gmail.com");
+        assertEquals(false,tester.function(user,null));
+        user = new User("obMi@c","mmmo1","");
+        assertEquals(false,tester.function(user,null));
+        user = new User("obMi@c","obadikkqq","");
+        assertEquals(false,tester.function(user,null));
+        user = new User("obMi@c","mihaeМihaelala","");
+        assertEquals(false,tester.function(user,null));
+        user = new User("obMi@c","k@1408200mi","");
+        assertEquals(false,tester.function(user,null));
+        user = new User("obMi@S","MIh182jak91","");
+        assertEquals(false,tester.function(user,null));
+
+    }
+}
