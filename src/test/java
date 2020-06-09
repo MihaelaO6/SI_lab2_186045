@@ -25,4 +25,29 @@ public class SILab2Test {
         assertEquals(false,tester.function(user,null));
 
     }
+    
+    @Test void EveryStetementTest(){
+        assertEquals(false,tester.function(null,null)); //"User is null!"
+        User user = new User(username,"mob1","mobadik@gmail.com");       //1
+        assertEquals(false,tester.function(user,null)); //"Username or password is null!"
+        user=new User("mihaha","miela@live.com",""); //2
+        assertEquals(false,tester.function(user,null)); //"Password is less than 8 characters long or содржи име"
+        user = new User("miha","mihae13","mobadik@gmail.com");   //3
+        assertEquals(false,tester.function(user,null));
+        user = new User("mih","0omijs12i","mobadik@gmail.com");	//4
+        assertEquals(false,tester.function(user,null));
+        user = new User("mih","adeoeaela12","obadik@gmail.com");	//5
+        assertEquals(false,tester.function(user,null));
+        user = new User("mih","mijo1aaa2#2","mihaela@gmail.com"); 	//6
+        assertEquals(false,tester.function(user,null));
+        user = new User("mih","meaelaajanjsi","mobadik@gmail.com");     //7
+        assertEquals(false,tester.function(user,null));
+        user = new User("mih","mmamama1@32@","mobadi@gmail.com");	//8
+        assertEquals(false,tester.function(user,null));
+        user = new User("mihh","ifaia125s@AdD","mobadik@gmail.com"); 	//9
+        assertEquals(false,tester.function(user,null));
+
+
+
+    }
 }
