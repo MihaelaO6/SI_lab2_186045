@@ -3,51 +3,65 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SILab2Test {
 
-    private SILab2 tester = new SILab2();
-    String username=null,password=null;
-
+    private SILab2 test = new SILab2();
+    String username = null;
+    String password = null;
 
     @Test  void MultipleConditionTest()
     {
         User user = new User("obMi@c",null,"");
         assertEquals(false,tester.function(user,null));
+        
         user = new User(null,"mob1","mobadik@gmail.com");
         assertEquals(false,tester.function(user,null));
+        
         user = new User("obMi@c","mmmo1","");
         assertEquals(false,tester.function(user,null));
+        
         user = new User("obMi@c","obadikkqq","");
         assertEquals(false,tester.function(user,null));
+        
         user = new User("obMi@c","mihaeМihaelala","");
         assertEquals(false,tester.function(user,null));
+        
         user = new User("obMi@c","k@1408200mi","");
         assertEquals(false,tester.function(user,null));
+        
         user = new User("obMi@S","MIh182jak91","");
         assertEquals(false,tester.function(user,null));
 
     }
     
     @Test void EveryStetementTest(){
-        assertEquals(false,tester.function(null,null)); //"User is null!"
-        User user = new User(username,"mob1","mobadik@gmail.com");       //1
-        assertEquals(false,tester.function(user,null)); //"Username or password is null!"
-        user=new User("mihaha","miela@live.com",""); //2
-        assertEquals(false,tester.function(user,null)); //"Password is less than 8 characters long or содржи име"
-        user = new User("miha","mihae13","mobadik@gmail.com");   //3
+        
+        assertEquals(false,tester.function(null,null)); 
+        
+        User user = new User(username,"mob1","mobadik@gmail.com");      
         assertEquals(false,tester.function(user,null));
-        user = new User("mih","0omijs12i","mobadik@gmail.com");	//4
+        
+        user=new User("mihaha","miela@live.com","");
+        assertEquals(false,tester.function(user,null)); 
+        
+        user = new User("miha","mihae13","mobadik@gmail.com");   
         assertEquals(false,tester.function(user,null));
-        user = new User("mih","adeoeaela12","obadik@gmail.com");	//5
+        
+        user = new User("mih","0omijs12i","mobadik@gmail.com");	
         assertEquals(false,tester.function(user,null));
-        user = new User("mih","mijo1aaa2#2","mihaela@gmail.com"); 	//6
+        
+        user = new User("mih","adeoeaela12","obadik@gmail.com");	
         assertEquals(false,tester.function(user,null));
-        user = new User("mih","meaelaajanjsi","mobadik@gmail.com");     //7
+        
+        user = new User("mih","mijo1aaa2#2","mihaela@gmail.com"); 	
         assertEquals(false,tester.function(user,null));
-        user = new User("mih","mmamama1@32@","mobadi@gmail.com");	//8
+        
+        user = new User("mih","meaelaajanjsi","mobadik@gmail.com");     
         assertEquals(false,tester.function(user,null));
-        user = new User("mihh","ifaia125s@AdD","mobadik@gmail.com"); 	//9
+        
+        user = new User("mih","mmamama1@32@","mobadi@gmail.com");	
         assertEquals(false,tester.function(user,null));
-
-
+        
+        user = new User("mihh","ifaia125s@AdD","mobadik@gmail.com"); 	
+        assertEquals(false,tester.function(user,null));
 
     }
 }
